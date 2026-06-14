@@ -173,8 +173,10 @@ export function IconProduct({
                             onClick={(e) => e.stopPropagation()}
                         >
                             {qrLink && (
-                                <div className='bg-[#ffffff] py-3 text-center  text-blue-500 mb-4 underline rounded-b-lg'>
-                                    {qrLink}
+                                <div className='bg-[#ffffff] py-3 text-center  text-blue-500 mb-4 underline rounded-lg'>
+                                    <a href={qrLink} target='_blank'>
+                                        {qrLink}
+                                    </a>
                                 </div>
                             )}
 
