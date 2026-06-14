@@ -164,7 +164,7 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
                         onClick={() => setModalOpen(false)}
                     >
                         <div
-                            className='relative w-full max-w-[90vw] aspect-video rounded-lg overflow-hidden shadow-2xl'
+                            className='relative w-full max-w-[90vw] h-[80vh] sm:h-auto aspect-video rounded-lg overflow-hidden shadow-2xl'
                             onClick={(e) => e.stopPropagation()}
                         >
                             <video src={videoURL} className='w-full h-full object-contain bg-black' controls autoPlay />
@@ -218,6 +218,7 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
                                 ></meshPhysicalMaterial>
                             </Text3D>
                         </Center>
+
                         <group scale={7}>
                             <group rotation={[0, 0, 0]} position={[0, 0.0, 0]}>
                                 <group position={[0, 0.8, 0]} rotation={[0.0, 0, 0]}>
@@ -229,7 +230,7 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
                                             transmission={1}
                                             thickness={2}
                                             normalMap={motherBoard1.normalMap}
-                                            normalScale={[1, -1]}
+                                            normalScale={[5, -5]}
                                             // backdropNode={verticalRefractor}
                                         ></meshPhysicalMaterial>
                                     </mesh>
