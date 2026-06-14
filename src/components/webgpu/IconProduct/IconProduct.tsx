@@ -1,4 +1,13 @@
-import { Box, Float, PerspectiveCamera, RoundedBox, useTexture, useVideoTexture } from '@react-three/drei'
+import {
+    Box,
+    Center,
+    Float,
+    PerspectiveCamera,
+    RoundedBox,
+    Text3D,
+    useTexture,
+    useVideoTexture,
+} from '@react-three/drei'
 import { KinematicCollider } from 'bvhecctrl'
 import { useEffect, useMemo, useState } from 'react'
 import { PlaneGeometry, RepeatWrapping, Texture } from 'three'
@@ -16,6 +25,7 @@ import {
 } from 'three/tsl'
 import { MeshStandardNodeMaterial } from 'three/webgpu'
 import tunnel from 'tunnel-rat'
+import { Helvetica } from './helvetica'
 
 let repeat =
     (repeat = 1) =>
@@ -41,9 +51,9 @@ export const IconProductHTML = () => {
     )
 }
 
-export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
+export function IconProduct({ title = 'Demo video', videoURL = `/products/lambo/lambo-genie.mp4` }) {
     // let images = {
-    //     tvWood: useTexture(`/assets/texture/7fecf2ef-0329-4920-a531-4c925c67f2ea.png`, repeat(1)),
+    //     tvWood: useTexture(`/assets/texture/7fec2fef-0329-4920-a531-4c925c67f2ea.png`, repeat(1)),
     //     motherboard1: useTexture(`/assets/texture/f29f5990-bd71-4832-8e75-6448b46b231c.png`, repeat(10)),
     //     wood1: useTexture(`/assets/texture/dfc787ef-9c4b-40d7-a885-d689f4aac5d0.png`, repeat(20)),
     //     wood3: useTexture(`/assets/texture/bc956b52-b8d6-418e-a111-81c61aceb3c7.png`, repeat(20)),
@@ -80,8 +90,10 @@ export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
 
     let adsVideo = useVideoTexture(videoURL)
 
+    let [modalOpen, setModalOpen] = useState(false)
     let [aspect, setAspect] = useState(1)
     useEffect(() => {
+        if (!adsVideo?.image) return
         adsVideo.image.loop = true
         adsVideo.image.muted = true
         adsVideo.image.playsInline = true
@@ -89,7 +101,7 @@ export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
         adsVideo.image.play()
         let aspectLocal = adsVideo.image.videoWidth / adsVideo.image.videoHeight
         setAspect(aspectLocal)
-    }, [])
+    }, [adsVideo])
 
     //
 
@@ -136,18 +148,61 @@ export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
     return (
         <>
             <t.In>
-                <div className=' absolute top-0 left-0 w-full h-full z-[20] bg-black/40'>html</div>
-                {/* build the fullscreen modal here */}
+                {/* fullscreen modal */}
+                {modalOpen && (
+                    <div
+                        className='absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm'
+                        onClick={() => setModalOpen(false)}
+                    >
+                        <div
+                            className='relative w-full max-w-[90vw] aspect-video rounded-lg overflow-hidden shadow-2xl'
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <video src={videoURL} className='w-full h-full object-contain bg-black' controls autoPlay />
+                            <button
+                                className='absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-red-500/50 hover:bg-red/20 text-white transition-colors cursor-pointer'
+                                onClick={() => setModalOpen(false)}
+                            >
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='24'
+                                    height='24'
+                                    viewBox='0 0 24 24'
+                                    fill='none'
+                                    stroke='currentColor'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                >
+                                    <line x1='18' y1='6' x2='6' y2='18' />
+                                    <line x1='6' y1='6' x2='18' y2='18' />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                )}
                 {/*  */}
             </t.In>
             {/*  */}
             <group
                 onClick={() => {
-                    // on click open modal here
+                    setModalOpen(true)
                 }}
             >
                 <Float rotationIntensity={0} floatIntensity={1} floatingRange={[0, 2]}>
                     <>
+                        <Center position={[0, 1.2, 0]}>
+                            <Text3D font={Helvetica as any}>
+                                {title}
+                                <meshPhysicalMaterial
+                                    color={'#77d72e'}
+                                    emissive={'#77d72e'}
+                                    emissiveIntensity={2}
+                                    roughness={1.0}
+                                    metalness={1.0}
+                                ></meshPhysicalMaterial>
+                            </Text3D>
+                        </Center>
                         <group scale={7}>
                             <group rotation={[0, 0, 0]} position={[0, 0.0, 0]}>
                                 <group position={[0, 0.8, 0]} rotation={[0.0, 0, 0]}>
@@ -164,7 +219,7 @@ export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
                                         ></meshPhysicalMaterial>
                                     </mesh>
 
-                                    <mesh geometry={tvScreen} position={[0, 0, 0.035]} scale={[1, 1, 1]}>
+                                    <mesh geometry={tvScreen} position={[0, 0, 0.025]} scale={[1, 1, 1]}>
                                         <meshStandardNodeMaterial
                                             roughness={1}
                                             metalness={0}
