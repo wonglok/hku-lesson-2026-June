@@ -76,7 +76,7 @@ function Content() {
 
                         <FloorContent></FloorContent>
 
-                        <SkinedMeshEffect></SkinedMeshEffect>
+                        {/* <SkinedMeshEffect></SkinedMeshEffect> */}
 
                         {/* <InstructionMesh></InstructionMesh> */}
 
