@@ -100,6 +100,17 @@ function Content() {
                             ></IconProduct>
                         </group>
 
+                        <group position={[35, 0, 25]} rotation={[0, Math.PI * (-0.25 - 0.5), 0]}>
+                            <IconProduct
+                                color='#ffffff'
+                                title='Sleepy Lamb'
+                                videoURL={`/products/lambo/sleepylamb.mp4`}
+                                qrLink={`https://github.com/wonglok/lok-web-scroll`}
+                            ></IconProduct>
+                        </group>
+
+                        {/* public/products/lambo/sleepylamb.mp4 */}
+
                         <FloorContent></FloorContent>
 
                         {/* <SkinedMeshEffect></SkinedMeshEffect> */}
