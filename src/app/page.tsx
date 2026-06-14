@@ -67,7 +67,11 @@ function Content() {
 
                     <Suspense fallback={null}>
                         <group position={[5, 0, 0]} rotation={[0, 0.25 * Math.PI, 0]}>
-                            <IconProduct videoURL={`/products/lambo/lambo-genie.mp4`}></IconProduct>
+                            <IconProduct
+                                color='#ffffff'
+                                title='Welcome!'
+                                videoURL={`/products/lambo/lambo-genie.mp4`}
+                            ></IconProduct>
                         </group>
 
                         <FloorContent></FloorContent>

@@ -51,7 +51,7 @@ export const IconProductHTML = () => {
     )
 }
 
-export function IconProduct({ title = 'Demo video', videoURL = `/products/lambo/lambo-genie.mp4` }) {
+export function IconProduct({ color = '#036013', title = 'Demo video', videoURL = `/products/lambo/lambo-genie.mp4` }) {
     // let images = {
     //     tvWood: useTexture(`/assets/texture/7fec2fef-0329-4920-a531-4c925c67f2ea.png`, repeat(1)),
     //     motherboard1: useTexture(`/assets/texture/f29f5990-bd71-4832-8e75-6448b46b231c.png`, repeat(10)),
@@ -191,15 +191,15 @@ export function IconProduct({ title = 'Demo video', videoURL = `/products/lambo/
             >
                 <Float rotationIntensity={0} floatIntensity={1} floatingRange={[0, 2]}>
                     <>
-                        <Center position={[0, 1.2, 0]}>
+                        <Center position={[0, 1, 0]}>
                             <Text3D font={Helvetica as any}>
                                 {title}
                                 <meshPhysicalMaterial
-                                    color={'#77d72e'}
-                                    emissive={'#77d72e'}
-                                    emissiveIntensity={2}
-                                    roughness={1.0}
-                                    metalness={1.0}
+                                    color={color}
+                                    roughness={0.0}
+                                    metalness={0.0}
+                                    transmission={1}
+                                    thickness={2}
                                 ></meshPhysicalMaterial>
                             </Text3D>
                         </Center>
@@ -234,7 +234,7 @@ export function IconProduct({ title = 'Demo video', videoURL = `/products/lambo/
                                 </group>
                             </group>
 
-                            <group position={[0, -0.1, 0]}>
+                            {/* <group position={[0, -0.1, 0]}>
                                 <mesh geometry={tvCube} position={[0, 0.0, 0]}>
                                     <meshPhysicalMaterial
                                         color={'#ffffff'}
@@ -247,7 +247,7 @@ export function IconProduct({ title = 'Demo video', videoURL = `/products/lambo/
                                         // backdropNode={verticalRefractor}
                                     ></meshPhysicalMaterial>
                                 </mesh>
-                            </group>
+                            </group> */}
                         </group>
                     </>
                 </Float>

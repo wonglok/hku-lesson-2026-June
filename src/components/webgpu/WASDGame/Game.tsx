@@ -71,6 +71,7 @@ export function GameCore({
     placeURL = `/assets/place/church2.glb`,
 }: GameInterface) {
     //
+    //
     let useMyStore = useStoreOfApp()
     let avatarScale = useMyStore((r) => r.avatarScale)
     let avatarOffsetY = useMyStore((r) => r.avatarOffsetY)
@@ -132,8 +133,6 @@ export function GameCore({
 
             return vec4(dirtyReflection.rgb.mul(0.5).mul(roughness), 1.0)
         })()
-
-        //
 
         sceneAPI?.o3d.traverse((it: any) => {
             //
@@ -698,7 +697,7 @@ export function GameCore({
                     azimuthRotateSpeed={1.0}
                     smoothTime={0.125}
                     minDistance={1}
-                    maxDistance={15}
+                    maxDistance={25}
                     // {...(process.env.NODE_ENV === 'development'
                     //     ? {
                     //           maxDistance: 180,
