@@ -697,14 +697,15 @@ export function GameCore({
                     polarRotateSpeed={1.0}
                     azimuthRotateSpeed={1.0}
                     smoothTime={0.125}
-                    minDistance={5}
-                    {...(process.env.NODE_ENV === 'development'
-                        ? {
-                              maxDistance: 180,
-                          }
-                        : {
-                              maxDistance: 55,
-                          })}
+                    minDistance={1}
+                    maxDistance={15}
+                    // {...(process.env.NODE_ENV === 'development'
+                    //     ? {
+                    //           maxDistance: 180,
+                    //       }
+                    //     : {
+                    //           maxDistance: 55,
+                    //       })}
                     makeDefault
                 />
             )}
