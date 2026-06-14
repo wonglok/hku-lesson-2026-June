@@ -74,6 +74,14 @@ function Content() {
                             ></IconProduct>
                         </group>
 
+                        <group position={[15, 0, -5]} rotation={[0, 0.0 * Math.PI, 0]}>
+                            <IconProduct
+                                color='#ffffff'
+                                title='Turtle & Rabbit'
+                                videoURL={`/products/lambo/rabbit-turtle.mp4`}
+                            ></IconProduct>
+                        </group>
+
                         <FloorContent></FloorContent>
 
                         {/* <SkinedMeshEffect></SkinedMeshEffect> */}

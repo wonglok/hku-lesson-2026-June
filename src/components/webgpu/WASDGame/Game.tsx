@@ -32,7 +32,7 @@ import { getHashIDFromObject3D, useStoreOfApp } from '../CanvasEditor/AppContext
 import tunnel from 'tunnel-rat'
 import { useAnimationStore, useButtonStore } from 'bvhecctrl'
 import { float, Fn, rangeFogFactor, reflector, sample, texture, textureBicubic, uniform, uv, vec4 } from 'three/tsl'
-import { hashBlur } from 'three/addons/tsl/display/hashBlur.js'
+// import { hashBlur } from 'three/addons/tsl/display/hashBlur.js'
 
 export interface GameInterface {
     avatarURL?: string
@@ -250,13 +250,11 @@ export function GameCore({
     }
 
     useEffect(() => {
-        // setTimeout(() => {
         resetPlayer()
-        // }, 1500)
         setTimeout(() => {
             resetPlayer()
-        }, 500)
-    }, [sceneAPI])
+        }, 1000)
+    }, [collider])
 
     const v3 = useMemo(() => {
         return new Vector3()
