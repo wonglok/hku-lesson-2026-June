@@ -188,6 +188,12 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
                 onClick={() => {
                     setModalOpen(true)
                 }}
+                onPointerEnter={() => {
+                    document.body.style.cursor = 'pointer'
+                }}
+                onPointerLeave={() => {
+                    document.body.style.cursor = ''
+                }}
             >
                 <Float rotationIntensity={0} floatIntensity={1} floatingRange={[0, 2]}>
                     <>
