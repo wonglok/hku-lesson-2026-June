@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-    title: 'aiClass TSL',
-    description: 'aiClass TSL',
+    title: 'aiClass with LokLok',
+    description: 'aiClass with LokLok',
 }
 
 export default function RootLayout({
