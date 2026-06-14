@@ -82,6 +82,14 @@ function Content() {
                             ></IconProduct>
                         </group>
 
+                        <group position={[25, 0, -5]} rotation={[0, 0.0 * Math.PI, 0]}>
+                            <IconProduct
+                                color='#ffffff'
+                                title='3 Little Pigs'
+                                videoURL={`/products/lambo/three-pigs-480p.mov`}
+                            ></IconProduct>
+                        </group>
+
                         <FloorContent></FloorContent>
 
                         {/* <SkinedMeshEffect></SkinedMeshEffect> */}
