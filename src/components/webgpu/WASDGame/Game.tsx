@@ -161,6 +161,9 @@ export function GameCore({
         o3d: characterAPI.o3d,
 
         avatarBoneFix: avatarBoneFix,
+
+        //
+
         //
         // jump1: `/assets/non-rpm/p-jump-up.fbx`,
         // jump2: `/assets/non-rpm/p-jump-idle.fbx`,
@@ -203,6 +206,9 @@ export function GameCore({
                 }
             }
         }
+
+        //
+
         window.addEventListener('keydown', keydown)
         return () => {
             window.addEventListener('keydown', keydown)
@@ -244,10 +250,13 @@ export function GameCore({
     }
 
     useEffect(() => {
+        // setTimeout(() => {
+        resetPlayer()
+        // }, 1500)
         setTimeout(() => {
             resetPlayer()
-        })
-    }, [])
+        }, 500)
+    }, [sceneAPI])
 
     const v3 = useMemo(() => {
         return new Vector3()
