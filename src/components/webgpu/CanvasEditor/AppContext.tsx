@@ -87,9 +87,9 @@ const getDataTemplate = () => {
         // cameraStart: [0, 2, -21.742451232274437],
 
         ...{
-            playerRotY: 1.55912,
-            playerStart: [9.097, 1.112, 1.488],
-            cameraStart: [12.022, 7.012, 15.288],
+            playerRotY: 0.80283,
+            playerStart: [9.521, 1.226, 3.652],
+            cameraStart: [15.583, 0.802, 6.97],
         },
 
         //
