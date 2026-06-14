@@ -71,6 +71,7 @@ function Content() {
                                 color='#ffffff'
                                 title='Welcome!'
                                 videoURL={`/products/lambo/lambo-genie.mp4`}
+                                qrLink={`https://video.loklok.org`}
                             ></IconProduct>
                         </group>
 
@@ -87,6 +88,15 @@ function Content() {
                                 color='#ffffff'
                                 title='3 Little Pigs'
                                 videoURL={`/products/lambo/three-pigs-480p.mov`}
+                            ></IconProduct>
+                        </group>
+
+                        <group position={[35, 0, 0]} rotation={[0, -0.25 * Math.PI, 0]}>
+                            <IconProduct
+                                color='#ffffff'
+                                title='Immserive Video Site'
+                                videoURL={`/products/lambo/scroll-web.mp4`}
+                                qrLink={`https://github.com/wonglok/lok-web-scroll`}
                             ></IconProduct>
                         </group>
 

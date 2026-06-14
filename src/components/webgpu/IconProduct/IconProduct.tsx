@@ -51,7 +51,12 @@ export const IconProductHTML = () => {
     )
 }
 
-export function IconProduct({ color = '#036013', title = 'Demo video', videoURL = `/products/lambo/lambo-genie.mp4` }) {
+export function IconProduct({
+    color = '#036013',
+    title = 'Demo video',
+    videoURL = `/products/lambo/lambo-genie.mp4`,
+    qrLink = '',
+}) {
     // let images = {
     //     tvWood: useTexture(`/assets/texture/7fec2fef-0329-4920-a531-4c925c67f2ea.png`, repeat(1)),
     //     motherboard1: useTexture(`/assets/texture/f29f5990-bd71-4832-8e75-6448b46b231c.png`, repeat(10)),
@@ -167,9 +172,15 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
                             className='relative w-full max-w-[90vw] h-[80vh] sm:h-auto aspect-video rounded-lg overflow-hidden shadow-2xl'
                             onClick={(e) => e.stopPropagation()}
                         >
+                            {qrLink && (
+                                <div className='bg-[#ffffff] py-3 text-center  text-blue-500 mb-4 underline rounded-b-lg'>
+                                    {qrLink}
+                                </div>
+                            )}
+
                             <video src={videoURL} className='w-full h-full object-contain bg-black' controls autoPlay />
                             <button
-                                className='absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-red-500/50 hover:bg-red/20 text-white transition-colors cursor-pointer'
+                                className='absolute top-1 right-1 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-red-500/50 hover:bg-red/20 text-white transition-colors cursor-pointer'
                                 onClick={() => setModalOpen(false)}
                             >
                                 <svg
