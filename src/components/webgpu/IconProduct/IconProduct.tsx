@@ -103,6 +103,15 @@ export function IconProduct({ color = '#036013', title = 'Demo video', videoURL 
         setAspect(aspectLocal)
     }, [adsVideo])
 
+    useEffect(() => {
+        if (!modalOpen) return
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setModalOpen(false)
+        }
+        window.addEventListener('keydown', onKeyDown)
+        return () => window.removeEventListener('keydown', onKeyDown)
+    }, [modalOpen])
+
     //
 
     let motherBoard1 = {

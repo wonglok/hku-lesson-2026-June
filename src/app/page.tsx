@@ -96,8 +96,9 @@ function Content() {
                             <BornAt></BornAt>
                         </div>
                     )}
-                    <div className='mb-1'>{<DayTimeControls show={true}></DayTimeControls>}</div>
-                    <div className='mb-1'>{<OrbitSunControls show={true}></OrbitSunControls>}</div>
+
+                    {/* <div className='mb-1'>{<DayTimeControls show={true}></DayTimeControls>}</div>
+                    <div className='mb-1'>{<OrbitSunControls show={true}></OrbitSunControls>}</div> */}
                 </div>
 
                 <IconProductHTML></IconProductHTML>
