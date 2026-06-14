@@ -5,7 +5,7 @@ import { DayTimeControls, EnvLight, OrbitSunControls } from '@/components/webgpu
 import { BornAt } from '@/components/webgpu/Edit/BornAt'
 // import { InstructionMesh } from '@/components/webgpu/InstructionMesh/InstructionMesh'
 import { SkinedMeshEffect } from '@/components/webgpu/SkinnedMesh/SkinedMeshEffect'
-import { IconProduct } from '@/components/webgpu/IconProduct/IconProduct'
+import { IconProduct, IconProductHTML } from '@/components/webgpu/IconProduct/IconProduct'
 import { Game, GameHTML } from '@/components/webgpu/WASDGame/Game'
 import { Suspense } from 'react'
 import { FloorContent } from '@/components/webgpu/InstructionMesh/FloorContent'
@@ -67,10 +67,8 @@ function Content() {
 
                     <Suspense fallback={null}>
                         <group position={[5, 0, 0]} rotation={[0, 0.25 * Math.PI, 0]}>
-                            <IconProduct></IconProduct>
+                            <IconProduct videoURL={`/products/lambo/lambo-genie.mp4`}></IconProduct>
                         </group>
-
-                        {/*  */}
 
                         <FloorContent></FloorContent>
 
@@ -97,6 +95,8 @@ function Content() {
                     <div className='mb-1'>{<DayTimeControls show={true}></DayTimeControls>}</div>
                     <div className='mb-1'>{<OrbitSunControls show={true}></OrbitSunControls>}</div>
                 </div>
+
+                <IconProductHTML></IconProductHTML>
             </div>
         </>
     )

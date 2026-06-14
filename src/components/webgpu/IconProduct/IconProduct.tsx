@@ -15,6 +15,7 @@ import {
     viewportSharedTexture,
 } from 'three/tsl'
 import { MeshStandardNodeMaterial } from 'three/webgpu'
+import tunnel from 'tunnel-rat'
 
 let repeat =
     (repeat = 1) =>
@@ -27,7 +28,20 @@ let repeat =
         tex.wrapT = RepeatWrapping
     }
 
-export function IconProduct() {
+let t = tunnel()
+
+export const IconProductHTML = () => {
+    return (
+        <>
+            {/*  */}
+
+            <t.Out></t.Out>
+            {/*  */}
+        </>
+    )
+}
+
+export function IconProduct({ videoURL = `/products/lambo/lambo-genie.mp4` }) {
     // let images = {
     //     tvWood: useTexture(`/assets/texture/7fecf2ef-0329-4920-a531-4c925c67f2ea.png`, repeat(1)),
     //     motherboard1: useTexture(`/assets/texture/f29f5990-bd71-4832-8e75-6448b46b231c.png`, repeat(10)),
@@ -64,7 +78,7 @@ export function IconProduct() {
     //
     //
 
-    let adsVideo = useVideoTexture(`/products/lambo/lambo-genie.mp4`)
+    let adsVideo = useVideoTexture(videoURL)
 
     let [aspect, setAspect] = useState(1)
     useEffect(() => {
@@ -82,12 +96,12 @@ export function IconProduct() {
     let motherBoard1 = {
         // emissiveMap: useTexture(`/assets/texture/wood/Wood094_1K-JPG_Color.jpg`, repeat(1)),
 
-        emissiveMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Color.jpg`, repeat(1)),
+        // emissiveMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Color.jpg`, repeat(1)),
 
-        metealnessMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Metalness.jpg`, repeat(1)),
-        roughnessMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Roughness.jpg`, repeat(1)),
+        // metealnessMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Metalness.jpg`, repeat(1)),
+        // roughnessMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Roughness.jpg`, repeat(1)),
         normalMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_NormalGL.jpg`, repeat(1)),
-        aoMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Displacement.jpg`, repeat(1)),
+        // aoMap: useTexture(`/assets/texture/Chip001_1K-JPG/Chip001_1K-JPG_Displacement.jpg`, repeat(1)),
     }
 
     let tvBack = useMemo(() => {
@@ -121,8 +135,17 @@ export function IconProduct() {
 
     return (
         <>
+            <t.In>
+                <div className=' absolute top-0 left-0 w-full h-full z-[20] bg-black/40'>html</div>
+                {/* build the fullscreen modal here */}
+                {/*  */}
+            </t.In>
             {/*  */}
-            <group>
+            <group
+                onClick={() => {
+                    // on click open modal here
+                }}
+            >
                 <Float rotationIntensity={0} floatIntensity={1} floatingRange={[0, 2]}>
                     <>
                         <group scale={7}>
