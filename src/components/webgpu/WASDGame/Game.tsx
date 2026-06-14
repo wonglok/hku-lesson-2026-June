@@ -225,7 +225,7 @@ export function GameCore({
 
     const resetPlayer = () => {
         if (ecctrlRef?.current) {
-            ecctrlRef?.current?.group?.position.set(playerStart[0], playerStart[1], playerStart[2])
+            ecctrlRef?.current?.group?.position.set(playerStart[0], playerStart[1] + 1, playerStart[2])
             ecctrlRef?.current?.group.rotation.set(0, 0, 0)
             ecctrlRef?.current?.resetLinVel()
             ecctrlRef?.current?.setLinVel(new Vector3(0, 2.5, 0))
@@ -238,13 +238,13 @@ export function GameCore({
                     cameraStart[1],
                     cameraStart[2],
                     playerStart[0],
-                    playerStart[1],
+                    playerStart[1] + 1,
                     playerStart[2],
                     true,
                 )
 
                 camControlRef.current.camera.position.set(cameraStart[0], cameraStart[1], cameraStart[2])
-                camControlRef.current.camera.lookAt(playerStart[0], playerStart[1], playerStart[2])
+                camControlRef.current.camera.lookAt(playerStart[0], playerStart[1] + 1, playerStart[2])
             }
         }
     }
