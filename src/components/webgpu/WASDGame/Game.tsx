@@ -340,7 +340,7 @@ export function GameCore({
                 camControlRef.current.camera.lookAt(playerStart[0], playerStart[1], playerStart[2])
             }
 
-            ;(camControlRef.current.camera as PerspectiveCamera).fov = 15
+            ;(camControlRef.current.camera as PerspectiveCamera).fov = 67.5
             camControlRef.current.camera.updateProjectionMatrix()
             //
             // camControlRef.current.moveTo(ecctrlRef.current.group.position.x, ecctrlRef.current.group.position.y + 0.3, ecctrlRef.current.group.position.z, true);
@@ -686,16 +686,16 @@ export function GameCore({
                 <CameraControls
                     //
 
-                    minAzimuthAngle={0 * Math.PI}
-                    maxAzimuthAngle={0 * Math.PI}
-                    minPolarAngle={0.25 * Math.PI}
-                    maxPolarAngle={0.25 * Math.PI}
+                    // minAzimuthAngle={0 * Math.PI}
+                    // maxAzimuthAngle={0 * Math.PI}
+                    // minPolarAngle={0.25 * Math.PI}
+                    // maxPolarAngle={0.25 * Math.PI}
                     //
                     key={sceneAPI.o3d.uuid + 'camera'}
                     ref={camControlRef}
                     colliderMeshes={colliderMeshesArray}
-                    polarRotateSpeed={-1}
-                    azimuthRotateSpeed={-1}
+                    polarRotateSpeed={1.0}
+                    azimuthRotateSpeed={1.0}
                     smoothTime={0.125}
                     minDistance={5}
                     {...(process.env.NODE_ENV === 'development'
