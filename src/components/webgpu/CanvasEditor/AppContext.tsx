@@ -89,7 +89,7 @@ const getDataTemplate = () => {
         ...{
             playerRotY: 1.55912,
             playerStart: [9.097, 1.112, 1.488],
-            cameraStart: [14.758, 3.589, 15.277],
+            cameraStart: [12.022, 7.012, 15.288],
         },
 
         //

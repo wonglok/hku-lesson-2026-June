@@ -340,7 +340,7 @@ export function GameCore({
                 camControlRef.current.camera.lookAt(playerStart[0], playerStart[1], playerStart[2])
             }
 
-            ;(camControlRef.current.camera as PerspectiveCamera).fov = 67.5
+            ;(camControlRef.current.camera as PerspectiveCamera).fov = 60
             camControlRef.current.camera.updateProjectionMatrix()
             //
             // camControlRef.current.moveTo(ecctrlRef.current.group.position.x, ecctrlRef.current.group.position.y + 0.3, ecctrlRef.current.group.position.z, true);
